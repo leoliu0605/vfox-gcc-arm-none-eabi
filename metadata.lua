@@ -3,15 +3,15 @@ PLUGIN = {}
 
 --- !!! MUST BE SET !!!
 --- Plugin name
-PLUGIN.name = "your plugin name"
+PLUGIN.name = "gcc_arm_none_eabi"
 --- Plugin version
 PLUGIN.version = "0.0.1"
 --- Plugin homepage
-PLUGIN.homepage = "https://github.com/version-fox/vfox-plugin-template"
+PLUGIN.homepage = "https://github.com/leoli0605/vfox-gcc-arm-none-eabi"
 --- Plugin license, please choose a correct license according to your needs.
 PLUGIN.license = "Apache 2.0"
 --- Plugin description
-PLUGIN.description = "your plugin description"
+PLUGIN.description = "Arm GNU Toolchain bare-metal target (arm-none-eabi) plugin for the vfox version manager"
 
 
 --- !!! OPTIONAL !!!
