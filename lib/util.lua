@@ -3,7 +3,7 @@ local util = {}
 local http = require("http")
 local json = require("json")
 
-function fetch_versions()
+function util:fetch_versions()
     local resp, err = http.get({
         url = "https://raw.githubusercontent.com/leoli0605/json-gcc-arm-none-eabi/main/versions.json"
     })
@@ -51,7 +51,7 @@ function fetch_versions()
 end
 
 function util:fetchAvailable()
-    local result = fetch_versions()
+    local result = util:fetch_versions()
     local versions = {}
     for i, v in ipairs(result) do
         table.insert(versions, {
@@ -80,7 +80,7 @@ function util:get_download_info(version)
     local ver = nil
     local url = nil
     local md5 = nil
-    local result = fetch_versions()
+    local result = util:fetch_versions()
     if version == "latest" then
         ver = result[1].version
         url = result[1].url
