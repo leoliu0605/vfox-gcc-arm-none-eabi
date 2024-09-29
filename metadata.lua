@@ -3,9 +3,9 @@ PLUGIN = {}
 
 --- !!! MUST BE SET !!!
 --- Plugin name
-PLUGIN.name = "gcc_arm_none_eabi"
+PLUGIN.name = "gcc-arm-none-eabi"
 --- Plugin version
-PLUGIN.version = "0.1.0"
+PLUGIN.version = "1.0.0"
 --- Plugin homepage
 PLUGIN.homepage = "https://github.com/leoli0605/vfox-gcc-arm-none-eabi"
 --- Plugin license, please choose a correct license according to your needs.
@@ -21,7 +21,7 @@ NOTE:
     If the plugin is not compatible with the current vfox version,
     vfox will not load the plugin and prompt the user to upgrade vfox.
  --]]
-PLUGIN.minRuntimeVersion = "0.3.0"
+PLUGIN.minRuntimeVersion = "0.6.0"
 --[[
 NOTE:
     If configured, vfox will check for updates to the plugin at this address,
