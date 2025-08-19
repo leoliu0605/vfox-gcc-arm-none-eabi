@@ -26,6 +26,6 @@ if [ -z "$(docker images -q ${IMAGE_NAME})" ]; then
 fi
 
 docker run -it --rm \
-    -v "$(pwd)":${ENTRY_PATH} \
-    -w ${ENTRY_PATH} \
-    ${IMAGE_NAME} /bin/bash
+    -v "$(pwd):${ENTRY_PATH}" \
+    -w "${ENTRY_PATH}" \
+    "${IMAGE_NAME}" /bin/bash
