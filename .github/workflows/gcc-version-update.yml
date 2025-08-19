@@ -1,0 +1,49 @@
+name: gcc-arm-none-eabi update
+
+on:
+  schedule:
+    - cron: "0 0 1 * *" # at 00:00 on day-of-month 1
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update the GCC version to the latest
+        run: |
+          echo "Updating the GCC version to the latest"
+          curl -o scripts/src/gcc.ts https://raw.githubusercontent.com/carlosperate/arm-none-eabi-gcc-action/main/src/gcc.ts
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add scripts/src/gcc.ts
+          git diff --cached --quiet || git commit -m "Update GCC version to the latest"
+          git push origin main
+
+      - name: Build and push
+        run: |
+          cd scripts
+          echo "Installing dependencies"
+          npm install
+          echo "Building and pushing"
+          npm run build && npm run node
+          cd ../
+          mkdir -p assets
+          cp scripts/versions.json assets/versions.json
+          echo "Done"
+
+      - name: Push the versions.json to the latest
+        run: |
+            echo "Pushing the versions.json to the latest"
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add assets/versions.json
+            git diff --cached --quiet || git commit -m "Update versions.json to the latest"
+            git push origin main
