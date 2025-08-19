@@ -21,7 +21,8 @@ if [ -z "$(docker images -q ${IMAGE_NAME})" ]; then
         --build-arg USER_NAME="${USER_NAME}" \
         --build-arg USER_UID="${USER_UID}" \
         --build-arg USER_GID="${USER_GID}" \
-        -t ${IMAGE_NAME} .
+        -t ${IMAGE_NAME}  \
+        -f ./dockerfiles/Dockerfile .
 fi
 
 docker run -it --rm \
