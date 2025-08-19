@@ -7,7 +7,7 @@ PLUGIN.name = "gcc-arm-none-eabi"
 --- Plugin version
 PLUGIN.version = "1.0.0"
 --- Plugin homepage
-PLUGIN.homepage = "https://github.com/leoli0605/vfox-gcc-arm-none-eabi"
+PLUGIN.homepage = "https://github.com/leoliu0605/vfox-gcc-arm-none-eabi"
 --- Plugin license, please choose a correct license according to your needs.
 PLUGIN.license = "Apache 2.0"
 --- Plugin description
