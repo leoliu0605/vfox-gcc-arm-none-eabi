@@ -2,7 +2,7 @@ name: gcc-arm-none-eabi update
 
 on:
   schedule:
-    - cron: "0 0 1 * *" # at 00:00 on day-of-month 1
+    - cron: "0 0 1 */3 *" # at 00:00 on day-of-month 1, every 3 months
   push:
     branches:
       - main
