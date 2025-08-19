@@ -1,6 +1,6 @@
 # vfox-gcc-arm-none-eabi
 
-vfox-gcc-arm-none-eabi is a plugin for [vfox](https://vfox.lhan.me/).
+vfox-gcc-arm-none-eabi is a plugin for [vfox](https://vfox.dev/).
 
 # Install
 
