@@ -5,7 +5,7 @@ local json = require("json")
 
 function util:fetch_versions()
     local resp, err = http.get({
-        url = "https://raw.githubusercontent.com/leoliu0605/vfox-gcc-arm-none-eabi/refs/heads/main/assets/versions.json"
+        url = "https://raw.githubusercontent.com/leoliu0605/vfox-arm-none-eabi-gcc/refs/heads/main/assets/versions.json"
     })
     if err ~= nil or resp.status_code ~= 200 then
         return {}
