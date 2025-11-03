@@ -41,12 +41,12 @@ jobs:
 
       - name: Push the versions.json to the latest
         run: |
-            echo "Pushing the versions.json to the latest"
-            git config --local user.email "action@github.com"
-            git config --local user.name "GitHub Action"
-            git add assets/versions.json
-            git diff --cached --quiet || git commit -m "Update versions.json to the latest"
-            git push origin main
+          echo "Pushing the versions.json to the latest"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add assets/versions.json
+          git diff --cached --quiet || git commit -m "Update versions.json to the latest"
+          git push origin main
 
       - name: Keep workflow active
         run: |
